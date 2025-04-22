@@ -1,20 +1,90 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SURA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Fire - Página Oficial</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div>
-        <ul>
-            <li>Claio Plára</li>
-            <li>Whyzinn</li>
-            <li>gabriel</li>
-            <li>Rayjhonatann</li>
-            <li>fei</li>
-        </ul>
-        <h1>slknaum-compensa</h1>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-yellow-500 to-red-600 p-6 shadow-lg">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-3xl font-bold">🔥 Free Fire Oficial</h1>
+      <nav class="space-x-4">
+        <a href="#personagens" class="hover:underline">Personagens</a>
+        <a href="#resgate" class="hover:underline">Resgatar Código</a>
+      </nav>
     </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-cover bg-center h-[400px]" style="background-image: url('https://cdn.sabercurioso.com/wp-content/uploads/2023/05/free-fire-personagens.jpg');">
+    <div class="h-full w-full bg-black bg-opacity-60 flex items-center justify-center">
+      <div class="text-center">
+        <h2 class="text-4xl font-bold mb-4">Entre na Batalha</h2>
+        <p class="text-lg">Sobreviva. Lute. Seja o último!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personagens -->
+  <section id="personagens" class="max-w-6xl mx-auto py-16 px-6">
+    <h3 class="text-2xl font-semibold mb-8 text-yellow-400">Personagens Populares</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-gray-800 p-4 rounded-xl shadow-lg">
+        <img src="https://static.wikia.nocookie.net/freefire/images/b/bc/Alok_Profile.png" alt="Alok" class="rounded-xl mb-4">
+        <h4 class="text-xl font-bold">Alok</h4>
+        <p>Cria uma aura que recupera vida e aumenta a velocidade dos aliados.</p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-xl shadow-lg">
+        <img src="https://static.wikia.nocookie.net/freefire/images/0/01/K_%28Captain_Booyah%29_Profile.png" alt="K" class="rounded-xl mb-4">
+        <h4 class="text-xl font-bold">K</h4>
+        <p>Habilidade de regenerar EP e alternar entre modos de cura e combate.</p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-xl shadow-lg">
+        <img src="https://static.wikia.nocookie.net/freefire/images/5/57/Chrono_Profile.png" alt="Chrono" class="rounded-xl mb-4">
+        <h4 class="text-xl font-bold">Chrono</h4>
+        <p>Cria escudo protetor que bloqueia dano e aumenta velocidade de movimento.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resgate -->
+  <section id="resgate" class="bg-gray-800 py-16">
+    <div class="max-w-md mx-auto px-6">
+      <h3 class="text-2xl font-semibold mb-6 text-center text-green-400">Resgatar Código</h3>
+      <form id="resgateForm" class="space-y-4">
+        <input type="text" id="codigo" placeholder="Digite seu código" class="w-full p-3 rounded-lg bg-gray-700 text-white" required>
+        <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 rounded-lg transition">Resgatar</button>
+      </form>
+      <p id="mensagem" class="text-center mt-4 font-semibold"></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black py-6 text-center text-gray-500">
+    &copy; 2025 Free Fire - Todos os direitos reservados
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const form = document.getElementById('resgateForm');
+    const mensagem = document.getElementById('mensagem');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const codigo = document.getElementById('codigo').value.trim();
+      if (codigo.length === 12) {
+        mensagem.textContent = "✅ Código resgatado com sucesso!";
+        mensagem.className = "text-green-400 mt-4 font-semibold";
+      } else {
+        mensagem.textContent = "❌ Código inválido. Tente novamente.";
+        mensagem.className = "text-red-500 mt-4 font-semibold";
+      }
+    });
+  </script>
+
 </body>
 </html>
